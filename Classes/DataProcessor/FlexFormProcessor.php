@@ -14,8 +14,8 @@ class FlexFormProcessor implements DataProcessorInterface
      */
     protected $flexFormService;
 
-    public function __construct(FlexFormService $flexFormService) {
-        $this->flexFormService = $flexFormService;
+    public function __construct() {
+        $this->flexFormService = GeneralUtility::makeInstance(FlexFormService::class);
     }
 
     public function process(ContentObjectRenderer $cObj, array $cObjConf, array $processorConf, array $processedData): array {
